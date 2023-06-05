@@ -6,12 +6,11 @@ const _instanceof = (target, fn) => {
   let proto = target.__proto__;
 
   while (true) {
+    // 如果proto为空 则代表没有找到
     if (!proto) return false;
     if (proto === fn.prototype) return true;
     proto = proto.__proto__;
-  }
-
-  
+  }  
 }
 function A() { }
 const a = new A();
